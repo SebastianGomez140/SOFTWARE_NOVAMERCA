@@ -1,0 +1,13 @@
+{
+  "name": "novamerca-backend",
+  "version": "1.0.0",
+  "description": "Backend del sistema Novaventa",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "mysql2": "^3.23.3"
+  }
+}
