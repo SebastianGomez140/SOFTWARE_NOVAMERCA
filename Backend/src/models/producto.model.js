@@ -57,7 +57,47 @@ const Producto = {
 
         db.query(sql, [id], callback);
 
-    }
+    }, 
+
+    actualizar: (id, datos, callback) => {
+
+        const sql = `
+            UPDATE producto
+            SET
+                nombre = ?,
+                descripcion = ?,
+                precio = ?,
+                stock = ?,
+                id_categoria = ?,
+                id_proveedor = ?
+            WHERE id_producto = ?
+        `;
+
+        db.query(
+            sql,
+            [
+                datos.nombre,
+                datos.descripcion,
+                datos.precio,
+                datos.stock,
+                datos.id_categoria,
+                datos.id_proveedor,
+                id
+            ],
+            callback
+        );
+    },
+    // Eliminar un producto
+eliminar: (id, callback) => {
+
+    const sql = `
+        DELETE FROM producto
+        WHERE id_producto = ?
+    `;
+
+    db.query(sql, [id], callback);
+
+}
 
 };
 
